@@ -1,11 +1,16 @@
-# tree-it
+## tree-it:
 
-_fast tiny tree scheming tool
+_fast tiny tool as always_
+Generate a Map of all files and directorys
 
-example:
+* get size added
+* count all added
 
-`root@lab:~# tree.py -s eternal_scanner/`
 
+`root@bing:~# ./tree.py ../eternal_scanner/
+`
+
+```
 ---⚈eternal_scanner/
    │
    │---⚈eternal_scanner/.git
@@ -110,3 +115,6 @@ example:
 ┌────────────────────────────┐
 │ Directoris: 18 , Files: 30 │
 └────────────────────────────┘
+
+
+```
