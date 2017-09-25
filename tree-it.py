@@ -56,7 +56,9 @@ def better_size(size_in_byte, dont_rount=False):
 
 def tree(path, number, size=False, dontround=False, jd=False, f=None, fd=None, depth=None):
     global all_dir_count, all_file_count, end_hail
-
+    if depth is not None:
+        if number-1 >= int(depth):
+            return
     if os.path.isdir(path):  # check if dir
 
         if "//" in path:
