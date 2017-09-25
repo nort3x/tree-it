@@ -140,7 +140,7 @@ def tree(path, number, size=False, dontround=False, jd=False, f=None, fd=None, d
                         all_file_count += 1
                         if f is not None:
                             if f in x:
-                                end_hail.append(path + "/" + x)
+                                end_hail.append(path + x)
                                 if size:
                                     total_number = 6
                                     s = "   │" * number + "   │" + colored("┌" + "─" * (len(x) + 2) + "┐",
@@ -200,9 +200,13 @@ parser.add_argument("-d", "--depth", metavar="", help="Depth of listing director
 parser.add_argument("-s", "--size", help="also list files size", action="store_true")
 parser.add_argument("-v", "--verbose", help="Don't round size", action="store_true")
 parser.add_argument("-jd", "--justdir", help="Just show directories", action="store_true")
-
 args = parser.parse_args()
-tree(args.Directory, 0, args.size, args.verbose, args.justdir, args.findfile, args.finddir, args.depth)
+if str(args.Directory) == str(os.getcwd()):
+    d = os.getcwd()
+else:
+    d = os.getcwd() +"/"+ args.Directory
+
+tree(d, 0, args.size, args.verbose, args.justdir, args.findfile, args.finddir, args.depth)
 # end hail (search result)
 try:
 
